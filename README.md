@@ -1,6 +1,10 @@
 # point-cloud-processing
 Point cloud processing slides
 
+Static presentation available [here](https://www.rockestate.be/point-cloud-processing/presentation/)
+
+Notebook available [here](https://github.com/rockestate/point-cloud-processing/blob/master/notebooks/point-cloud-processing.ipynb)
+
 ## Initial setup
 
 Will work on linux, may work on macOS. [Get in touch](mailto:hello@rockestate.be) if you'd like to give us a hand to make it run on Windows.
