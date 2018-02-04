@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>Point Cloud Processing Presentation</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>point-cloud-processing-static</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 {% if jekyll.environment == 'production' and site.ga-tracking-id %}
   {% include google-analytics.html %}
@@ -11836,9 +11836,9 @@ $( document ).ready(code_toggle);
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="A-tour-of-point-cloud-processing">A tour of point cloud processing<a class="anchor-link" href="#A-tour-of-point-cloud-processing">&#182;</a></h1><h2 id="FOSS4G-Belgium-2017"><a href="http://2017.foss4g.be">FOSS4G Belgium 2017</a><a class="anchor-link" href="#FOSS4G-Belgium-2017">&#182;</a></h2><p>26 october 2017</p>
-<h3 id="Mathieu-Carette">Mathieu Carette<a class="anchor-link" href="#Mathieu-Carette">&#182;</a></h3><p>Notebook available at <a href="https://github.com/rockestate/point-cloud-processing">https://github.com/rockestate/point-cloud-processing</a></p>
+<h1 id="A-tour-of-point-cloud-processing">A tour of point cloud processing<a class="anchor-link" href="#A-tour-of-point-cloud-processing">&#182;</a></h1><h3 id="Mathieu-Carette">Mathieu Carette<a class="anchor-link" href="#Mathieu-Carette">&#182;</a></h3><p>Notebook available at <a href="https://github.com/rockestate/point-cloud-processing">https://github.com/rockestate/point-cloud-processing</a></p>
 <p>Slides available at <a href="https://www.rockestate.be/point-cloud-processing/presentation/">https://www.rockestate.be/point-cloud-processing/presentation/</a></p>
+<p>(previous versions <a href="https://github.com/rockestate/point-cloud-processing/releases">here</a>)</p>
 
 </div>
 </div>
@@ -11849,38 +11849,8 @@ $( document ).ready(code_toggle);
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="About-me">About me<a class="anchor-link" href="#About-me">&#182;</a></h1><ul>
 <li>PhD in Mathematics (ULB, 2009)</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
 <li>Postdocs (UIUC, UCLouvain, McGill)</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
 <li>Data Scientist (KBC, Forespell)</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
 <li>Now working on
 <a href="https://www.rockestate.be">
   <img src="../img/rockestate-logo-notext.png" alt="Drawing" style="width: 120px;"/>
@@ -11912,7 +11882,7 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">YouTubeVideo</span>
@@ -11929,7 +11899,7 @@ $( document ).ready(code_toggle);
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[1]:</div>
+<div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -11938,7 +11908,7 @@ $( document ).ready(code_toggle);
         <iframe
             width="400"
             height="300"
-            src="https://www.youtube.com/embed/GSPcyhSAgTQ?start=7&end=31"
+            src="https://www.youtube.com/embed/GSPcyhSAgTQ?end=31&start=7"
             frameborder="0"
             allowfullscreen
         ></iframe>
@@ -12016,7 +11986,7 @@ $( document ).ready(code_toggle);
 <li>Open source: <a href="https://github.com/PDAL/PDAL">https://github.com/PDAL/PDAL</a></li>
 <li>C++, command-line, python</li>
 <li>Wraps some PCL functionality</li>
-<li>For windows users: part of the <a href="https://trac.osgeo.org/osgeo4w/">OSGeo4W</a> distribution (32bit only)</li>
+<li>For windows users: part of the <a href="https://trac.osgeo.org/osgeo4w/">OSGeo4W</a> distribution</li>
 </ul>
 </li>
 </ul>
@@ -12052,10 +12022,12 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">ipyleaflet</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span> <span class="nn">ipyleaflet</span>
 <span class="kn">import</span> <span class="nn">IPython.display</span>
 <span class="kn">import</span> <span class="nn">ipyvolume.pylab</span> <span class="k">as</span> <span class="nn">p3</span>
 <span class="kn">import</span> <span class="nn">json</span>
@@ -12067,13 +12039,20 @@ $( document ).ready(code_toggle);
 <span class="kn">import</span> <span class="nn">pdal</span>
 <span class="kn">import</span> <span class="nn">PIL</span>
 <span class="kn">import</span> <span class="nn">pyproj</span>
+<span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">shapely.geometry</span>
 <span class="kn">import</span> <span class="nn">scipy.spatial</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">urllib.request</span>
 
+<span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+    
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;../src&#39;</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">pcl_utils</span> <span class="k">import</span> <span class="n">locally_extreme_points</span>
+<span class="kn">from</span> <span class="nn">pcl_utils</span> <span class="k">import</span> <span class="n">local_max</span>
+
+<span class="c1"># Url for aerial imagery</span>
+<span class="n">IVaerial</span> <span class="o">=</span> <span class="s2">&quot;https://geoservices.informatievlaanderen.be/raadpleegdiensten/ogw/wms?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetMap&amp;CRS=EPSG:31370&amp;BBOX=</span><span class="si">{0}</span><span class="s2">,</span><span class="si">{1}</span><span class="s2">,</span><span class="si">{2}</span><span class="s2">,</span><span class="si">{3}</span><span class="s2">&amp;WIDTH=512&amp;HEIGHT=512&amp;LAYERS=OGWRGB13_15VL&amp;STYLES=default&amp;FORMAT=image/png&quot;</span>
 
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
@@ -12085,13 +12064,13 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Download the LAS data file if not already present</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="s1">&#39;../data&#39;</span><span class="p">):</span>
     <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;../data&#39;</span><span class="p">)</span>
-<span class="n">lidar_filename</span> <span class="o">=</span> <span class="s1">&#39;LiDAR_DHMV_2_P4_ATL12431_ES_20140329_31272_3_148500_172500.las&#39;</span>
+<span class="n">lidar_filename</span> <span class="o">=</span> <span class="s1">&#39;LiDAR_DHMV_2_P4_ATL12431_ES_20140325_31195_2_150500_166500.las&#39;</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="s1">&#39;../data/&#39;</span> <span class="o">+</span> <span class="n">lidar_filename</span><span class="p">):</span>
     <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="s1">&#39;https://s3-eu-west-1.amazonaws.com/rockestate-public/lidar/&#39;</span> <span class="o">+</span> <span class="n">lidar_filename</span><span class="p">,</span> 
                                <span class="s1">&#39;../data/&#39;</span> <span class="o">+</span> <span class="n">lidar_filename</span><span class="p">)</span>
@@ -12107,7 +12086,7 @@ $( document ).ready(code_toggle);
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mf">50.865948</span><span class="p">,</span> <span class="mf">4.351826</span><span class="p">),</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">17</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mf">50.81343</span><span class="p">,</span> <span class="mf">4.38188</span><span class="p">),</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
 <span class="n">dc</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">DrawControl</span><span class="p">()</span>
 <span class="n">m</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">dc</span><span class="p">)</span>
 <span class="n">m</span>
@@ -12129,7 +12108,7 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">wsg84</span> <span class="o">=</span> <span class="n">pyproj</span><span class="o">.</span><span class="n">Proj</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="s1">&#39;epsg:4326&#39;</span><span class="p">)</span>
@@ -12154,7 +12133,7 @@ $( document ).ready(code_toggle);
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>POLYGON ((148776.2701930787 172919.8420462897, 148817.7993776024 172899.4757044148, 148767.1519177397 172755.6518779453, 148705.9825845991 172783.5876676841, 148776.2701930787 172919.8420462897))
+<pre>POLYGON ((150687.8518289287 167058.3858805448, 150939.3740217351 167072.33228858, 150980.4548986266 166743.7380920332, 150919.5663185167 166714.6929215267, 150754.0807228128 166712.885090881, 150581.449810213 166933.4497666787, 150687.8518289287 167058.3858805448))
 </pre>
 </div>
 </div>
@@ -12166,7 +12145,7 @@ $( document ).ready(code_toggle);
 
 
 <div class="output_svg output_subarea ">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="124.95200647087768" height="177.32538181194104" viewBox="148699.4149778653 172749.08427121153 124.95200647087768 177.32538181194104" preserveAspectRatio="xMinYMin meet"><g transform="matrix(1,0,0,-1,0,345675.493924235)"><path fill-rule="evenodd" fill="#66cc99" stroke="#555555" stroke-width="2.0" opacity="0.6" d="M 148776.27019307867,172919.8420462897 L 148817.7993776024,172899.47570441477 L 148767.15191773974,172755.6518779453 L 148705.98258459906,172783.58766768407 L 148776.27019307867,172919.8420462897 z" /></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="150565.48960667645 166696.92488734447 430.9254954867356 391.36760477209464" preserveAspectRatio="xMinYMin meet"><g transform="matrix(1,0,0,-1,0,333785.21737946104)"><path fill-rule="evenodd" fill="#66cc99" stroke="#555555" stroke-width="2.872836636578237" opacity="0.6" d="M 150687.85182892866,167058.38588054478 L 150939.37402173507,167072.33228858002 L 150980.45489862663,166743.7380920332 L 150919.5663185167,166714.69292152673 L 150754.08072281277,166712.88509088103 L 150581.449810213,166933.44976667874 L 150687.85182892866,167058.38588054478 z" /></g></svg>
 </div>
 
 </div>
@@ -12177,33 +12156,26 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cropper</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;pipeline&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s1">&#39;../data/&#39;</span> <span class="o">+</span> <span class="n">lidar_filename</span><span class="p">,</span>
-        <span class="p">{</span>
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;filters.hag&quot;</span><span class="p">,</span>
-        <span class="p">},</span>
-        <span class="p">{</span>   
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;filters.crop&quot;</span><span class="p">,</span>
-            <span class="s1">&#39;polygon&#39;</span><span class="p">:</span><span class="n">polygon</span><span class="o">.</span><span class="n">wkt</span><span class="p">,</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;filters.eigenvalues&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;knn&quot;</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;filters.normal&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;knn&quot;</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">polygon</span><span class="o">.</span><span class="n">bounds</span>
+<span class="n">cropper</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;pipeline&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s1">&#39;../data/&#39;</span><span class="o">+</span> <span class="n">lidar_filename</span><span class="p">,</span>
+        <span class="p">{</span>   <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;filters.crop&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;bounds&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">(([</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]],[</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">3</span><span class="p">]]))},</span>
+        <span class="p">{</span>   <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;filters.crop&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;polygon&#39;</span><span class="p">:</span><span class="n">polygon</span><span class="o">.</span><span class="n">wkt</span><span class="p">},</span>
+        <span class="p">{</span>   <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;filters.hag&quot;</span><span class="p">},</span>
+        <span class="p">{</span>   <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;filters.eigenvalues&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;knn&quot;</span><span class="p">:</span><span class="mi">16</span><span class="p">},</span>
+        <span class="p">{</span>   <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;filters.normal&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;knn&quot;</span><span class="p">:</span><span class="mi">16</span><span class="p">}</span>
+    <span class="p">]}</span>
 <span class="n">pipeline</span> <span class="o">=</span> <span class="n">pdal</span><span class="o">.</span><span class="n">Pipeline</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">cropper</span><span class="p">))</span>
 <span class="n">pipeline</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
-<span class="n">n_points</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pipeline selected </span><span class="si">{}</span><span class="s1"> points&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_points</span><span class="p">))</span>
+<span class="o">%</span><span class="k">time</span> n_points = pipeline.execute()
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pipeline selected </span><span class="si">{}</span><span class="s1"> points (</span><span class="si">{:.1f}</span><span class="s1"> pts/m2)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_points</span><span class="p">,</span> <span class="n">n_points</span><span class="o">/</span><span class="n">polygon</span><span class="o">.</span><span class="n">area</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -12220,7 +12192,9 @@ $( document ).ready(code_toggle);
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Pipeline selected 48573 points
+<pre>CPU times: user 15.9 s, sys: 318 ms, total: 16.2 s
+Wall time: 16.3 s
+Pipeline selected 473184 points (4.4 pts/m2)
 </pre>
 </div>
 </div>
@@ -12231,7 +12205,7 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Load Pipeline output in python objects</span>
@@ -12241,8 +12215,10 @@ $( document ).ready(code_toggle);
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="n">col</span><span class="p">:</span> <span class="n">arr</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">})</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;X_0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y_0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Z_0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;X_0&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y_0&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Z_0&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -12280,7 +12256,7 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Color ground in grey</span>
@@ -12300,7 +12276,7 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Show ground as surface</span>
@@ -12326,7 +12302,7 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Color points according to flatness</span>
@@ -12341,13 +12317,12 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Separate between trees and the rest</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;tree_potential&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Classification&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;HeightAboveGround&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;flatness&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">.</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;tree_potential&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Classification&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;HeightAboveGround&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;flatness&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">.</span><span class="mi">05</span><span class="p">)</span> <span class="o">&amp;</span>  <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;NumberOfReturns&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;ReturnNumber&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span> 
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;other&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">~</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;ground&#39;</span><span class="p">]</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;tree_potential&#39;</span><span class="p">]</span>
-
 <span class="n">tree_potential</span> <span class="o">=</span> <span class="n">p3</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;tree_potential&#39;</span><span class="p">],</span><span class="s1">&#39;Y&#39;</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;tree_potential&#39;</span><span class="p">],</span><span class="s1">&#39;Z&#39;</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;tree_potential&#39;</span><span class="p">],</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">viridis</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;tree_potential&#39;</span><span class="p">],</span><span class="s1">&#39;flatness&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span><span class="p">)[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">],</span> <span class="n">size</span><span class="o">=.</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">other</span> <span class="o">=</span> <span class="n">p3</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;other&#39;</span><span class="p">],</span><span class="s1">&#39;Y&#39;</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;other&#39;</span><span class="p">],</span><span class="s1">&#39;Z&#39;</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;other&#39;</span><span class="p">],</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">viridis</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;other&#39;</span><span class="p">],</span><span class="s1">&#39;flatness&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span><span class="p">)[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">],</span> <span class="n">size</span><span class="o">=.</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">non_ground</span><span class="o">.</span><span class="n">visible</span><span class="o">=</span><span class="kc">False</span>
@@ -12371,7 +12346,7 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Hide non-tree</span>
@@ -12385,27 +12360,10 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lep</span> <span class="o">=</span> <span class="n">locally_extreme_points</span><span class="p">(</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;tree_potential&#39;</span><span class="p">],[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;tree_potential&#39;</span><span class="p">],</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> 
-    <span class="n">radius</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">smoothing_radius</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">min_neighbourhood_size</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">treetops</span> <span class="o">=</span> <span class="n">lep</span>
-<span class="n">treetop_spheres</span> <span class="o">=</span> <span class="n">p3</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">treetops</span><span class="p">[</span><span class="mi">0</span><span class="p">][:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">treetops</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">treetops</span><span class="p">[</span><span class="mi">0</span><span class="p">][:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;sphere&#39;</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">scatters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">treetop_spheres</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lep</span> <span class="o">=</span> <span class="n">local_max</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;tree_potential&#39;</span><span class="p">],[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span><span class="s1">&#39;HeightAboveGround&#39;</span><span class="p">]],</span> <span class="n">radius</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">density_threshold</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12418,7 +12376,21 @@ $( document ).ready(code_toggle);
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">treetop_spheres</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Vega10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">treetops</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span><span class="o">%</span><span class="k">10</span>)[:,0:3]
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">treetop_spheres</span> <span class="o">=</span> <span class="n">p3</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">lep</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">],</span> <span class="n">lep</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">],</span> <span class="n">lep</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;sphere&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">scatters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">treetop_spheres</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">treetop_spheres</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Vega10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lep</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">]))</span><span class="o">%</span><span class="k">10</span>)[:,0:3]
 </pre></div>
 
 </div>
@@ -12437,10 +12409,10 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">kdtree</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">kdtree</span><span class="o">.</span><span class="n">KDTree</span><span class="p">(</span><span class="n">treetops</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">kdtree</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">kdtree</span><span class="o">.</span><span class="n">KDTree</span><span class="p">(</span><span class="n">lep</span><span class="p">[[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">]])</span>
 <span class="n">dist</span><span class="p">,</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">kdtree</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;tree_potential&#39;</span><span class="p">],[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
 <span class="n">tree_potential</span><span class="o">.</span><span class="n">color</span><span class="o">=</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Vega10</span><span class="p">(</span><span class="n">idx</span><span class="o">%</span><span class="k">10</span>)[:,0:3]
 <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;tree_potential&#39;</span><span class="p">],</span> <span class="s1">&#39;tree_idx&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">idx</span>
@@ -12462,14 +12434,31 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">medians</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;tree_idx&#39;</span><span class="p">)[[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">axis</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">]:</span>
     <span class="n">df</span><span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="o">+</span><span class="n">axis</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">axis</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;tree_idx&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">medians</span><span class="p">[</span><span class="n">axis</span><span class="p">])</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;radius&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;dX&#39;</span><span class="p">,</span> <span class="s1">&#39;dY&#39;</span><span class="p">,</span> <span class="s1">&#39;dZ&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">radii</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;tree_idx&#39;</span><span class="p">)[</span><span class="s1">&#39;radius&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">radii</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;tree_idx&#39;</span><span class="p">)[</span><span class="s1">&#39;radius&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">),</span> <span class="n">lep</span><span class="p">[</span><span class="s1">&#39;HeightAboveGround&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">*.</span><span class="mi">4</span><span class="p">])</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">scale</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<span class="n">treetop_spheres</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">medians</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span>
+<span class="n">treetop_spheres</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">medians</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span>
+<span class="n">treetop_spheres</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">medians</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span>
+<span class="n">treetop_spheres</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">radii</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">/</span> <span class="n">scale</span>
 </pre></div>
 
 </div>
@@ -12488,24 +12477,7 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">scale</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
-<span class="n">treetop_spheres</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">medians</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span>
-<span class="n">treetop_spheres</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">medians</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span>
-<span class="n">treetop_spheres</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">medians</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span>
-<span class="n">treetop_spheres</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">radii</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">/</span> <span class="n">scale</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tree_potential</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="kc">False</span>
@@ -12518,7 +12490,7 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">other</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="kc">True</span>
@@ -12550,10 +12522,10 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m2</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mf">50.865948</span><span class="p">,</span> <span class="mf">4.351826</span><span class="p">),</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">17</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m2</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mf">50.81343</span><span class="p">,</span> <span class="mf">4.38188</span><span class="p">),</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">17</span><span class="p">)</span>
 <span class="n">dc2</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">DrawControl</span><span class="p">()</span>
 <span class="n">m2</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">dc2</span><span class="p">)</span>
 <span class="n">m2</span>
@@ -12563,41 +12535,12 @@ $( document ).ready(code_toggle);
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-
-
-
- 
- 
-<div id="69786f2e-5a53-4956-9bc0-60e8e831356c"></div>
-<div class="output_subarea output_widget_view ">
-<script type="text/javascript">
-var element = $('#69786f2e-5a53-4956-9bc0-60e8e831356c');
-</script>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "dabae428bce04577ad6fac459240ff86", "version_major": 2, "version_minor": 0}
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Selecting-conference-building-with-a-polygon">Selecting conference building with a polygon<a class="anchor-link" href="#Selecting-conference-building-with-a-polygon">&#182;</a></h2><p><img src="../img/building-leaflet.png" alt=""></p>
+<h2 id="Selecting-building-with-a-polygon">Selecting building with a polygon<a class="anchor-link" href="#Selecting-building-with-a-polygon">&#182;</a></h2><p><img src="../img/building-leaflet.png" alt=""></p>
 
 </div>
 </div>
@@ -12629,7 +12572,7 @@ var element = $('#69786f2e-5a53-4956-9bc0-60e8e831356c');
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>POLYGON ((148605.5652729562 172940.129142697, 148662.2259857805 172908.5223111287, 148626.7249616213 172824.0989997433, 148563.2344679619 172853.4831915358, 148605.5652729562 172940.129142697))
+<pre>POLYGON ((150876.6899425487 166855.1808815384, 150913.4053620266 166873.7645316971, 150904.3812825281 166890.1151175071, 150861.390885691 166886.3253158694, 150876.6899425487 166855.1808815384))
 </pre>
 </div>
 </div>
@@ -12641,7 +12584,7 @@ var element = $('#69786f2e-5a53-4956-9bc0-60e8e831356c');
 
 
 <div class="output_svg output_subarea ">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="108.27392925490858" height="125.31255438993685" viewBox="148558.59326224372 172819.4577940252 108.27392925490858 125.31255438993685" preserveAspectRatio="xMinYMin meet"><g transform="matrix(1,0,0,-1,0,345764.2281424403)"><path fill-rule="evenodd" fill="#66cc99" stroke="#555555" stroke-width="2.0" opacity="0.6" d="M 148605.5652729562,172940.12914269697 L 148662.22598578047,172908.52231112868 L 148626.7249616213,172824.09899974335 L 148563.23446796188,172853.4831915358 L 148605.5652729562,172940.12914269697 z" /></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100.0" height="100.0" viewBox="150859.31030663758 166853.100302485 56.175634442450246 39.095394075498916" preserveAspectRatio="xMinYMin meet"><g transform="matrix(1,0,0,-1,0,333745.2959990455)"><path fill-rule="evenodd" fill="#66cc99" stroke="#555555" stroke-width="1.123512688849005" opacity="0.6" d="M 150876.68994254866,166855.18088153843 L 150913.4053620266,166873.76453169715 L 150904.38128252808,166890.11511750706 L 150861.390885691,166886.3253158694 L 150876.68994254866,166855.18088153843 z" /></g></svg>
 </div>
 
 </div>
@@ -12652,33 +12595,27 @@ var element = $('#69786f2e-5a53-4956-9bc0-60e8e831356c');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cropper</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;pipeline&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s1">&#39;../data/LiDAR_DHMV_2_P4_ATL12431_ES_20140329_31272_3_148500_172500.las&#39;</span><span class="p">,</span>
-        <span class="p">{</span>
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;filters.hag&quot;</span><span class="p">,</span>
-        <span class="p">},</span>
-        <span class="p">{</span>   
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;filters.crop&quot;</span><span class="p">,</span>
-            <span class="s1">&#39;polygon&#39;</span><span class="p">:</span><span class="n">polygon2</span><span class="o">.</span><span class="n">wkt</span><span class="p">,</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;filters.eigenvalues&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;knn&quot;</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;filters.normal&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;knn&quot;</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">polygon2</span><span class="o">.</span><span class="n">bounds</span>
+<span class="n">cropper</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;pipeline&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;../data/*150500_166500.las&#39;</span><span class="p">))</span> <span class="o">+</span> <span class="p">[</span> <span class="c1"># [ &#39;../data/&#39; + lidar_filename,</span>
+        <span class="p">{</span>   <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;filters.crop&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;bounds&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">(([</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]],[</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">3</span><span class="p">]]))},</span>
+        <span class="p">{</span>   <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;filters.merge&quot;</span><span class="p">},</span>
+        <span class="p">{</span>   <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;filters.hag&quot;</span><span class="p">},</span>
+        <span class="p">{</span>   <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;filters.crop&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;polygon&#39;</span><span class="p">:</span><span class="n">polygon2</span><span class="o">.</span><span class="n">wkt</span><span class="p">},</span>
+        <span class="p">{</span>   <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;filters.eigenvalues&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;knn&quot;</span><span class="p">:</span><span class="mi">16</span><span class="p">},</span>
+        <span class="p">{</span>   <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;filters.normal&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;knn&quot;</span><span class="p">:</span><span class="mi">16</span><span class="p">}</span>
+    <span class="p">]}</span>
 <span class="n">pipeline</span> <span class="o">=</span> <span class="n">pdal</span><span class="o">.</span><span class="n">Pipeline</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">cropper</span><span class="p">))</span>
 <span class="n">pipeline</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
-<span class="n">n_points</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pipeline selected </span><span class="si">{}</span><span class="s1"> points&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_points</span><span class="p">))</span>
+<span class="o">%</span><span class="k">time</span> n_points = pipeline.execute()
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pipeline selected </span><span class="si">{}</span><span class="s1"> points (</span><span class="si">{:.1f}</span><span class="s1"> pts/m2)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_points</span><span class="p">,</span> <span class="n">n_points</span><span class="o">/</span><span class="n">polygon2</span><span class="o">.</span><span class="n">area</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -12695,7 +12632,9 @@ var element = $('#69786f2e-5a53-4956-9bc0-60e8e831356c');
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Pipeline selected 23525 points
+<pre>CPU times: user 5.39 s, sys: 880 ms, total: 6.27 s
+Wall time: 6.5 s
+Pipeline selected 31223 points (28.8 pts/m2)
 </pre>
 </div>
 </div>
@@ -12706,7 +12645,7 @@ var element = $('#69786f2e-5a53-4956-9bc0-60e8e831356c');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">arrays</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -12715,8 +12654,10 @@ var element = $('#69786f2e-5a53-4956-9bc0-60e8e831356c');
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="n">col</span><span class="p">:</span> <span class="n">arr</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">})</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;X_0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y_0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Z_0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;X_0&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y_0&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Z_0&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
 <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;HeightAboveGround&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="o">.</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;Classification&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
 </pre></div>
 
@@ -12727,7 +12668,7 @@ var element = $('#69786f2e-5a53-4956-9bc0-60e8e831356c');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">p3</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
@@ -12745,35 +12686,6 @@ var element = $('#69786f2e-5a53-4956-9bc0-60e8e831356c');
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-
-
-
- 
- 
-<div id="a86d6eec-498c-4251-afc1-18cb8dc84ff6"></div>
-<div class="output_subarea output_widget_view ">
-<script type="text/javascript">
-var element = $('#a86d6eec-498c-4251-afc1-18cb8dc84ff6');
-</script>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "71ef53c261904893ba0bde609ae0d1d6", "version_major": 2, "version_minor": 0}
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -12786,10 +12698,10 @@ var element = $('#a86d6eec-498c-4251-afc1-18cb8dc84ff6');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">roof_mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Classification&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;HeightAboveGround&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">roof_mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Classification&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;HeightAboveGround&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Eigenvalue0&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="o">.</span><span class="mi">02</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;NumberOfReturns&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;ReturnNumber&#39;</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -12799,7 +12711,7 @@ var element = $('#a86d6eec-498c-4251-afc1-18cb8dc84ff6');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">roof_quiver</span> <span class="o">=</span> <span class="n">p3</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">roof_mask</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">],</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">roof_mask</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">],</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">roof_mask</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">roof_mask</span><span class="p">,</span><span class="s1">&#39;NormalY&#39;</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">roof_mask</span><span class="p">,</span><span class="s1">&#39;NormalZ&#39;</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">roof_mask</span><span class="p">,</span><span class="s1">&#39;NormalX&#39;</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -12823,12 +12735,12 @@ var element = $('#a86d6eec-498c-4251-afc1-18cb8dc84ff6');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">roof_quiver</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">roof_mask</span><span class="p">,</span><span class="s1">&#39;NormalY&#39;</span><span class="p">]</span> <span class="o">*</span><span class="mi">30</span>
-<span class="n">roof_quiver</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">roof_mask</span><span class="p">,</span><span class="s1">&#39;NormalZ&#39;</span><span class="p">]</span> <span class="o">*</span><span class="mi">30</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
-<span class="n">roof_quiver</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">roof_mask</span><span class="p">,</span><span class="s1">&#39;NormalX&#39;</span><span class="p">]</span> <span class="o">*</span><span class="mi">30</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">roof_quiver</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">roof_mask</span><span class="p">,</span><span class="s1">&#39;NormalY&#39;</span><span class="p">]</span> <span class="o">*</span><span class="mi">15</span>
+<span class="n">roof_quiver</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">roof_mask</span><span class="p">,</span><span class="s1">&#39;NormalZ&#39;</span><span class="p">]</span> <span class="o">*</span><span class="mi">15</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">roof_quiver</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">roof_mask</span><span class="p">,</span><span class="s1">&#39;NormalX&#39;</span><span class="p">]</span> <span class="o">*</span><span class="mi">15</span>
 </pre></div>
 
 </div>
@@ -12847,7 +12759,7 @@ var element = $('#a86d6eec-498c-4251-afc1-18cb8dc84ff6');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">roof_quiver</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="kc">False</span>
@@ -12861,7 +12773,7 @@ var element = $('#a86d6eec-498c-4251-afc1-18cb8dc84ff6');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Find building orientation using normals</span>
@@ -12878,7 +12790,7 @@ var element = $('#a86d6eec-498c-4251-afc1-18cb8dc84ff6');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Rotate building to align walls with X &amp; Y axes</span>
@@ -12905,14 +12817,14 @@ var element = $('#a86d6eec-498c-4251-afc1-18cb8dc84ff6');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Build 3D model in rotated coordinates</span>
 <span class="n">z0</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">roof_mask</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
-<span class="n">ystep</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">roof_mask</span><span class="p">,</span><span class="s1">&#39;Y_r&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
-<span class="n">y_profile</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">roof_mask</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">ystep</span><span class="p">)[</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="o">.</span><span class="mi">99</span><span class="p">)</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">())</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">z0</span><span class="p">)</span>
-<span class="n">xstep</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">roof_mask</span><span class="p">,</span><span class="s1">&#39;X_r&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">roof_mask</span><span class="p">,</span><span class="s1">&#39;X_r&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="nb">len</span><span class="p">(</span><span class="n">ystep</span><span class="o">.</span><span class="n">unique</span><span class="p">()))</span>
+<span class="n">ystep</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">roof_mask</span><span class="p">,</span><span class="s1">&#39;Y_r&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span>
+<span class="n">y_profile</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">roof_mask</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">ystep</span><span class="p">)[</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="o">.</span><span class="mi">99</span><span class="p">)</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">())</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">z0</span><span class="p">)</span>
+<span class="n">xstep</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">roof_mask</span><span class="p">,</span><span class="s1">&#39;X_r&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="o">.</span><span class="mi">01</span><span class="p">),</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">roof_mask</span><span class="p">,</span><span class="s1">&#39;X_r&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="o">.</span><span class="mi">99</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">ystep</span><span class="o">.</span><span class="n">unique</span><span class="p">()))</span>
 <span class="n">X</span><span class="p">,</span><span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">xstep</span><span class="p">,</span> <span class="n">ystep</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
 <span class="n">Z</span> <span class="o">=</span> <span class="n">y_profile</span><span class="p">[</span><span class="n">Y</span><span class="o">.</span><span class="n">ravel</span><span class="p">()]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">Y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
@@ -12924,7 +12836,7 @@ var element = $('#a86d6eec-498c-4251-afc1-18cb8dc84ff6');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Plot 3D model</span>
@@ -12952,7 +12864,7 @@ var element = $('#a86d6eec-498c-4251-afc1-18cb8dc84ff6');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Go back to original coordinates</span>
@@ -12979,13 +12891,14 @@ var element = $('#a86d6eec-498c-4251-afc1-18cb8dc84ff6');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Add texture to the ground</span>
-<span class="n">texture</span> <span class="o">=</span> <span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;../data/image.jpeg&#39;</span><span class="p">)</span>
-<span class="n">ground</span><span class="o">.</span><span class="n">u</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Classification&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;X_0&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mi">148500</span><span class="p">)</span> <span class="o">/</span> <span class="mi">500</span>
-<span class="n">ground</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Classification&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Y_0&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mi">172500</span><span class="p">)</span> <span class="o">/</span> <span class="mi">500</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">IVaerial</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">b</span><span class="p">))</span>
+<span class="n">texture</span> <span class="o">=</span> <span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+<span class="n">ground</span><span class="o">.</span><span class="n">u</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Classification&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;X_0&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ground</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Classification&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Y_0&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">-</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">ground</span><span class="o">.</span><span class="n">texture</span> <span class="o">=</span> <span class="n">texture</span>
 </pre></div>
 
@@ -12996,14 +12909,14 @@ var element = $('#a86d6eec-498c-4251-afc1-18cb8dc84ff6');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ... and to the building</span>
 <span class="n">df_extra</span><span class="p">[</span><span class="s1">&#39;X_0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_extra</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;X_0&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="n">df_extra</span><span class="p">[</span><span class="s1">&#39;Y_0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_extra</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y_0&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">roof_model</span><span class="o">.</span><span class="n">u</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_extra</span><span class="p">[</span><span class="s1">&#39;X_0&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mi">148500</span><span class="p">)</span> <span class="o">/</span> <span class="mi">500</span>
-<span class="n">roof_model</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_extra</span><span class="p">[</span><span class="s1">&#39;Y_0&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mi">172500</span><span class="p">)</span> <span class="o">/</span> <span class="mi">500</span>
+<span class="n">roof_model</span><span class="o">.</span><span class="n">u</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_extra</span><span class="p">[</span><span class="s1">&#39;X_0&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">roof_model</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_extra</span><span class="p">[</span><span class="s1">&#39;Y_0&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">-</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">roof_model</span><span class="o">.</span><span class="n">texture</span> <span class="o">=</span> <span class="n">texture</span>
 <span class="n">p3</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;minimal&#39;</span><span class="p">)</span>
 </pre></div>
@@ -13018,6 +12931,47 @@ var element = $('#a86d6eec-498c-4251-afc1-18cb8dc84ff6');
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Add-texture-from-aerial-imagery">Add texture from aerial imagery<a class="anchor-link" href="#Add-texture-from-aerial-imagery">&#182;</a></h2><p><img src="../img/building-6.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Things-to-look-out-for">Things to look out for<a class="anchor-link" href="#Things-to-look-out-for">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="pdal">pdal<a class="anchor-link" href="#pdal">&#182;</a></h2><ul>
+<li>Fast point-in-polygon algorithm implemented</li>
+<li>Apache arrow support</li>
+<li>Conda packaging</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="jupyter">jupyter<a class="anchor-link" href="#jupyter">&#182;</a></h2><ul>
+<li>C++ jupyter kernels </li>
+<li>Jupyterlab</li>
+</ul>
 
 </div>
 </div>
