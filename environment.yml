@@ -1,7 +1,6 @@
 name: pcp-env
 channels:
  - conda-forge
- #- mathieu
 dependencies:
  - python=3
  - pillow
