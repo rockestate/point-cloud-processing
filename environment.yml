@@ -1,15 +1,18 @@
 name: pcp-env
 channels:
  - conda-forge
- - mathieu
+ #- mathieu
 dependencies:
- - python=3.5
+ - python=3
+ - pillow
+ - urllib3
  - folium
  - jupyter
  - jupyterlab
  - numpy =1.12*
  - pandas
  - pdal
+ - python-pdal
  - plotly
  - pythreejs
  - pyproj
