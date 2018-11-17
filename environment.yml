@@ -8,7 +8,7 @@ dependencies:
  - folium
  - jupyter
  - jupyterlab
- - numpy =1.12*
+ - numpy
  - pandas
  - pdal
  - python-pdal
@@ -21,7 +21,5 @@ dependencies:
  - scikit-learn
  - tqdm
  - ipyleaflet
-# - ipywidgets =7.0.0
-# - widgetsnbextension =3.0.2
  - ipywidgets
  - widgetsnbextension

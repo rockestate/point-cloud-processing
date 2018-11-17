@@ -1,9 +1,9 @@
 # point-cloud-processing
-Point cloud processing slides
+Run the notebook live in your browser: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/rockestate/point-cloud-processing/master?filepath=notebooks%2Fpoint-cloud-processing.ipynb)
 
 Static presentation available [here](https://www.rockestate.be/point-cloud-processing/presentation/)
 
-Static notebook available [here](https://github.com/rockestate/point-cloud-processing/blob/master/notebooks/point-cloud-processing.ipynb) or try running it live in the browser with [Binder](https://mybinder.org/v2/gh/rockestate/point-cloud-processing/master)!
+Static notebook available [here](https://github.com/rockestate/point-cloud-processing/blob/master/notebooks/point-cloud-processing.ipynb)
 
 ## Initial setup
 
